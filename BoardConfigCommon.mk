@@ -124,6 +124,7 @@ TARGET_RIL_VARIANT := caf
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
+include vendor/cm/sepolicy/sepolicy.mk
 
 BOARD_SEPOLICY_DIRS += \
     $(VENDOR_PATH)/sepolicy
@@ -154,6 +155,9 @@ BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_qcwcn
 WIFI_DRIVER_FW_PATH_AP := "ap"
 WIFI_DRIVER_FW_PATH_STA := "sta"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
+
+# Inherit from CM directly
+include vendor/cm/BoardConfig.mk
 
 # inherit from the proprietary version
 -include vendor/cyanogen/msm8939-common/BoardConfigVendor.mk
